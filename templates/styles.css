@@ -1,0 +1,8 @@
+body {
+  background-image: url("background.png");
+ }
+
+.container {
+    display: flex;
+    justify-content: center;
+  }

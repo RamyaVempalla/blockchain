@@ -6,6 +6,7 @@
     <h1 style= "text-align: center;">
         Automotive Transparency Blockchain
     </h1>
+
     <div class="container" >
       <nav class="navbar navbar-default">
           <div class="container-fluid">
@@ -15,11 +16,33 @@
             <ul class="nav navbar-nav">
               <li><a href="/mineblock">Mine Block</a></li>
               <li><a href="/view">View Blockchain</a></li>
-              <li><a href="/verify">Verify Blockchain</a></li>
               <li><a href="/lookup">Block Lookup</a></li>
             </ul>
+
           </div>
         </nav>
+
+    <div style="text-align:center; font-size: x-large;">
+        Blockchain Verification
+    </div>
+
+
+
+        {%for i in verify_results %}
+        <div style="border: 3px solid black;">
+            Block: {{ i['block']}}
+            <br>
+            Valid: {{ i ['Valid']}}
+            <br>
+            Previous Block Hash Stored: {{ i['stored']}}
+            <br>
+            Calculated Previous Hash: {{ i['calculated']}}
+            
+
+        </div>
+        {% endfor %}
+    
       </div>
+
 </body>
 </html>

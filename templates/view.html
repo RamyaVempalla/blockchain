@@ -14,12 +14,27 @@
             </div>
             <ul class="nav navbar-nav">
               <li><a href="/mineblock">Mine Block</a></li>
-              <li><a href="/view">View Blockchain</a></li>
               <li><a href="/verify">Verify Blockchain</a></li>
               <li><a href="/lookup">Block Lookup</a></li>
             </ul>
           </div>
         </nav>
+        
+        {% for i in chain_results %}
+        <div style="border: 5px solid black">
+            Block: {{ i['height']}}
+            <br>
+            Timestamp: {{ i ['timestamp']}}
+            <br>
+            Previous Block Hash: {{ i['previous_block_hash']}}
+            <br>
+            VIN Number: {{ i['VIN']}}
+            <br>
+            Description: {{ i['Description']}}
+
+        </div>
+        {% endfor %}
+    
       </div>
 </body>
 </html>

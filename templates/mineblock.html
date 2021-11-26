@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <link rel = "stylesheet"  href= "styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <h1 style= "text-align: center;">
+        Automotive Transparency Blockchain
+    </h1>
+    <div class="container" >
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">Automotive Transparency Blockchain</a>
+              </div>
+              <ul class="nav navbar-nav">
+                <li><a href="/verify">Verify Blockchain</a></li>
+                <li><a href="/view">View Blockchain</a></li>
+                <li><a href="/lookup">Block Lookup</a></li>
+              </ul>
+            </div>
+          </nav>
+    <div style="text-align:center; font-size: x-large;">
+        Block Mining
+    </div>
+    <div class= "col-6 mt-5">
+        <form action = "{{ url_for('mine_block') }}" method="POST">
+            <div class="input-group mb-3 center-block" style="border: 1px solid black;">
+                <input type="text" class="form-control" placeholder="VIN Number" aria-label="VIN Number" aria-describedby="VIN" name="vin">
+                <input type="text" class="form-control" placeholder="Description" aria-label="Description" aria-describedby="Desc" name = "desc">
+                <input class="btn btn-primary center-block" type="submit" value="Submit">
+            </div>
+        </form>
+        
+    </div>
+    </div>
+
+</body>
+</html>
