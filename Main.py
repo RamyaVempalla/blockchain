@@ -46,12 +46,3 @@ class Blockchain:
             index+=1
         return results
         
-
-
-chain = Blockchain()
-
-chain.mine_block(chain.hash(chain.prev_block()),1,"Tires")
-chain.mine_block(chain.hash(chain.prev_block()),20,"Engine")
-chain.mine_block(chain.hash(chain.prev_block()),400,"Axle")
-
-print(chain.verify_chain())

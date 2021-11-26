@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <head>
+    <link rel = "stylesheet"  href= "{{ url_for('static',filename='styles/styles.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">>
 </head>
 <body>
-    <h1 style= "text-align: center;">
+    <h1 style= "text-align: center; color: white;">
         Automotive Transparency Blockchain
     </h1>
-
     <div class="container" >
       <nav class="navbar navbar-default">
           <div class="container-fluid">
@@ -18,31 +18,24 @@
               <li><a href="/view">View Blockchain</a></li>
               <li><a href="/lookup">Block Lookup</a></li>
             </ul>
-
           </div>
         </nav>
-
-    <div style="text-align:center; font-size: x-large;">
-        Blockchain Verification
-    </div>
-
-
-
-        {%for i in verify_results %}
-        <div style="border: 3px solid black;">
+        
+        {% for i in verify_results %}
+        <div style="border: 5px solid black;color: white;">
             Block: {{ i['block']}}
             <br>
-            Valid: {{ i ['Valid']}}
+            Valid?: {{ i ['Valid']}}
             <br>
-            Previous Block Hash Stored: {{ i['stored']}}
+            Stored Previous Block Hash: {{ i['stored']}}
             <br>
             Calculated Previous Hash: {{ i['calculated']}}
+            <br>
             
 
         </div>
         {% endfor %}
     
       </div>
-
 </body>
 </html>

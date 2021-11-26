@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <head>
+    <link rel = "stylesheet"  href= "{{ url_for('static',filename='styles/styles.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">>
 </head>
 <body>
-    <h1 style= "text-align: center;">
+    <h1 style= "text-align: center; color: white;">
         Automotive Transparency Blockchain
     </h1>
     <div class="container" >
@@ -21,7 +22,7 @@
         </nav>
         
         {% for i in chain_results %}
-        <div style="border: 5px solid black">
+        <div style="border: 5px solid black; color: white;">
             Block: {{ i['height']}}
             <br>
             Timestamp: {{ i ['timestamp']}}
