@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <link rel = "stylesheet" type="text/css"  href= "{{ url_for('static',filename='styles/styles.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+</head>
+<body>
+    <h1 style= "text-align: center; color: white;">
+        Automotive Transparency Blockchain
+    </h1>
+    <div class="container" >
+        <h2 style="text-align: center; color: white;"> 
+            Please verify your status before mining.
+        </h2>
+        <form action = "{{ url_for('login') }}" method="POST">
+            <div class="input-group mb-3 center-block" style="border: 1px solid black;">
+                <input type="text" class="form-control" placeholder="Key" aria-label="key" aria-describedby="key" name="key">
+                <input class="btn btn-primary center-block" type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
+

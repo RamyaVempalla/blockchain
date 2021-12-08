@@ -1,20 +1,24 @@
+from ctypes import resize
 import datetime
 import hashlib
 import json
 import binascii
+from typing import ChainMap
 class Blockchain:
 
     def __init__(self):
         self.chain =[]
-        self.mine_block(prev_hash='0',vin_number=0,description="Genesis")
+        self.mine_block(prev_hash='0',vin_number=0,make='',model='',description="Genesis")
 
 
 
-    def mine_block(self,prev_hash,vin_number,description):
+    def mine_block(self,prev_hash,vin_number,make,model,description):
         block= { 'height':len(self.chain)+1,
                   'timestamp': str(datetime.datetime.now()),
                   'previous_block_hash': prev_hash,
                   'VIN': vin_number,
+                  'Make': make,
+                  'Model':model,
                   'Description': description}
         self.chain.append(block)
         return block
@@ -44,5 +48,13 @@ class Blockchain:
                 results.append( {"block": index, "Valid": "True", 'stored': curr_block['previous_block_hash'], "calculated":self.hash(prev_block) })
             prev_block = curr_block
             index+=1
+        return results
+        
+    def lookup(self,VIN_lookup):
+        results = []
+        for i in self.chain:
+            if str(i['VIN']) == VIN_lookup:
+                results.append(i)
+                
         return results
         
